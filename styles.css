@@ -1022,6 +1022,11 @@ p { margin: 0 0 18px; color: var(--walnut); max-width: 58ch; }
   font-size: 1.5rem;
   color: var(--espresso);
   transition: color 0.2s ease;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+a.contact-value[href^="mailto:"] {
+  font-size: 1.2rem;
 }
 a.contact-value:hover { color: var(--terracotta); }
 .contact-sub {
@@ -1106,8 +1111,8 @@ a.contact-value:hover { color: var(--terracotta); }
 
 .footer-inner {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+  gap: 50px;
   padding: 90px 0 60px;
 }
 
@@ -1158,7 +1163,7 @@ a.contact-value:hover { color: var(--terracotta); }
   border-top: 1px solid rgba(246, 239, 228, 0.12);
   padding: 24px 0;
 }
-.footer-base .container {
+.footer-base-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1171,6 +1176,179 @@ a.contact-value:hover { color: var(--terracotta); }
   color: rgba(246, 239, 228, 0.5);
 }
 .credit { font-family: var(--font-display); font-style: italic; }
+
+.otm-credit {
+  text-align: center;
+  margin-top: 18px !important;
+  padding-top: 16px;
+  border-top: 1px solid rgba(246, 239, 228, 0.08);
+  font-size: 0.72rem !important;
+  letter-spacing: 0.04em;
+  color: rgba(246, 239, 228, 0.35) !important;
+}
+.otm-credit a {
+  color: rgba(246, 239, 228, 0.55);
+  transition: color 0.2s ease;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(246, 239, 228, 0.15);
+  padding-bottom: 1px;
+}
+.otm-credit a:hover {
+  color: #f3c9a5;
+  border-bottom-color: #f3c9a5;
+}
+
+/* ===========================================
+   COFFEE MENU
+   =========================================== */
+.coffee-menu {
+  background: var(--cream);
+  position: relative;
+}
+
+.coffee-menu-figure {
+  margin: 0 auto;
+  max-width: 640px;
+  text-align: center;
+}
+
+.coffee-menu-figure a {
+  display: block;
+  position: relative;
+  background: var(--ivory);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 14px;
+  box-shadow: var(--shadow-lift);
+  transition: transform 0.4s cubic-bezier(.4, 0, .2, 1), box-shadow 0.4s ease;
+}
+.coffee-menu-figure a::before {
+  content: "";
+  position: absolute;
+  inset: 22px;
+  border: 1px solid var(--line-soft);
+  pointer-events: none;
+  z-index: 2;
+}
+.coffee-menu-figure a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 40px 70px -30px rgba(43, 29, 20, 0.45);
+}
+
+.coffee-menu-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1px;
+}
+
+.coffee-menu-figure figcaption {
+  margin-top: 24px;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--walnut);
+  line-height: 1.6;
+}
+.coffee-menu-figure figcaption .italic {
+  color: var(--terracotta);
+}
+
+/* ===========================================
+   LEGAL PAGES
+   =========================================== */
+.legal { background: var(--cream); }
+
+.legal-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.legal-updated {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--terracotta);
+  margin: 0 0 36px;
+}
+
+.legal-lead {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--cocoa);
+  font-style: italic;
+  max-width: none;
+  padding-bottom: 32px;
+  margin-bottom: 36px;
+  border-bottom: 1px solid var(--line);
+}
+
+.legal-wrap h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: var(--espresso);
+  letter-spacing: -0.005em;
+  margin: 40px 0 16px;
+  line-height: 1.2;
+}
+
+.legal-wrap h2.legal-divider {
+  font-size: 1.85rem;
+  color: var(--terracotta);
+  text-align: center;
+  padding: 36px 0 14px;
+  margin: 48px 0 24px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  font-style: italic;
+}
+
+.legal-wrap h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--espresso);
+  margin: 28px 0 10px;
+}
+
+.legal-wrap p {
+  color: var(--walnut);
+  max-width: none;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.legal-wrap a {
+  color: var(--terracotta);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.2s ease;
+}
+.legal-wrap a:hover {
+  color: var(--terracotta-d);
+}
+
+.allergen-callout {
+  background: var(--paper);
+  border-left: 3px solid var(--terracotta);
+  padding: 24px 28px;
+  margin: 20px 0 32px;
+  border-radius: 2px;
+}
+.allergen-callout .allergen-lead {
+  margin: 0;
+  color: var(--cocoa);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+.allergen-callout strong {
+  color: var(--espresso);
+  font-weight: 700;
+}
 
 /* ===========================================
    REVEAL ANIMATIONS
@@ -1202,6 +1380,7 @@ a.contact-value:hover { color: var(--terracotta); }
   }
   .products-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .footer-brand { grid-column: 1 / -1; }
   .carousel-slide { flex: 0 0 calc((100% - 28px) / 2); }
   .city-list { grid-template-columns: repeat(3, 1fr); }
   .cta-strip { padding: 90px 0; }
@@ -1252,7 +1431,7 @@ a.contact-value:hover { color: var(--terracotta); }
   .contact-form-wrap { padding: 28px 22px; }
 
   .footer-inner { grid-template-columns: 1fr; gap: 32px; padding: 60px 0 40px; }
-  .footer-base .container { flex-direction: column; align-items: flex-start; }
+  .footer-base-row { flex-direction: column; align-items: flex-start; }
 
   .marquee-track {
     font-size: 1rem;
@@ -1260,6 +1439,18 @@ a.contact-value:hover { color: var(--terracotta); }
     animation-duration: 14s;
   }
   .marquee-track .dot { padding-right: 36px; }
+
+  .coffee-menu-figure { max-width: 100%; }
+  .coffee-menu-figure a { padding: 10px; }
+  .coffee-menu-figure a::before { inset: 16px; }
+  .coffee-menu-figure figcaption { font-size: 0.92rem; margin-top: 18px; }
+
+  .legal-lead { font-size: 1rem; padding-bottom: 24px; margin-bottom: 28px; }
+  .legal-wrap h2 { font-size: 1.35rem; margin: 32px 0 12px; }
+  .legal-wrap h2.legal-divider { font-size: 1.5rem; padding: 28px 0 12px; margin: 36px 0 20px; }
+  .legal-wrap h3 { font-size: 1.05rem; margin: 22px 0 8px; }
+  .legal-wrap p { font-size: 0.95rem; line-height: 1.7; }
+  .allergen-callout { padding: 20px 22px; }
 
   .cta-strip { padding: 70px 0; }
   .cta-actions .btn { width: 100%; }
